@@ -1,3 +1,5 @@
+var syntax        = 'sass'; // Syntax: sass or scss;
+
 var gulp        	= require('gulp'),
     sass        	= require('gulp-sass'),
     browserSync 	= require('browser-sync'),
@@ -8,8 +10,8 @@ var gulp        	= require('gulp'),
     autoprefixer 	= require('gulp-autoprefixer');
     gcmq            = require('gulp-group-css-media-queries');
 
-gulp.task('sass', function() {
-	return gulp.src('scss/**/*.scss')
+gulp.task('styles', function() {
+	return gulp.src(''+syntax+'/**/*.'+syntax+'')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 version', '>1%', 'ie 8', 'ie 7'], {cascade: true}))
 	.pipe(gulp.dest('css'))
@@ -19,7 +21,7 @@ gulp.task('sass', function() {
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: '../',
+			baseDir: './',
 			index: "index.html",
             directory: true
 		},
@@ -74,8 +76,8 @@ gulp.task('gcmq', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('watch', ['browser-sync', 'sass'] , function() {
-	gulp.watch('scss/**/*.scss', ['sass']);
+gulp.task('watch', ['browser-sync', 'styles'] , function() {
+	gulp.watch(''+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch('*.html', browserSync.reload);
 	gulp.watch('**/*.css', browserSync.reload);
 	gulp.watch('js/**/*.js', browserSync.reload);

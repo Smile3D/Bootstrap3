@@ -30,6 +30,10 @@ $media-expressions: (
 @import 'base/mixins';
 @import 'base/helpers';
 
+@import 'layouts/header';
+@import 'layouts/common';
+@import 'layouts/footer';
+
 body {
 	min-width: $base-min-width;
 }
