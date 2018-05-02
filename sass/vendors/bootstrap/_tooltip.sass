@@ -10,13 +10,13 @@
   display: block
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
-  @include reset-text
+  +reset-text
   font-size: $font-size-small
 
-  @include opacity(0)
+  +opacity(0)
 
   &.in     
-    @include opacity($tooltip-opacity)
+    +opacity($tooltip-opacity)
   &.top    
     margin-top:  -3px
     padding: $tooltip-arrow-width 0

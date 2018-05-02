@@ -29,11 +29,11 @@
 
   // Round the first and last items
   &:first-child 
-    @include border-top-radius($list-group-border-radius)
+    +border-top-radius($list-group-border-radius)
   
   &:last-child 
     margin-bottom: 0
-    @include border-bottom-radius($list-group-border-radius)
+    +border-bottom-radius($list-group-border-radius)
   
 
 
@@ -110,10 +110,10 @@ button.list-group-item
 // Add modifier classes to change text and background color on individual items.
 // Organizationally, this must come after the `:hover` states.
 
-@include list-group-item-variant(success, $state-success-bg, $state-success-text)
-@include list-group-item-variant(info, $state-info-bg, $state-info-text)
-@include list-group-item-variant(warning, $state-warning-bg, $state-warning-text)
-@include list-group-item-variant(danger, $state-danger-bg, $state-danger-text)
++list-group-item-variant(success, $state-success-bg, $state-success-text)
++list-group-item-variant(info, $state-info-bg, $state-info-text)
++list-group-item-variant(warning, $state-warning-bg, $state-warning-text)
++list-group-item-variant(danger, $state-danger-bg, $state-danger-text)
 
 
 // Custom content options

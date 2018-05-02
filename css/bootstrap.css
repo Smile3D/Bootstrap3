@@ -1048,14 +1048,12 @@ th {
 
 * {
   -webkit-box-sizing: border-box;
-    -webkit-box-sizing--moz-box-sizing: border-box;
-      -webkit-box-sizing--moz-box-sizing-box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-    -webkit-box-sizing--moz-box-sizing: border-box;
-      -webkit-box-sizing--moz-box-sizing-box-sizing: border-box; }
+  box-sizing: border-box; }
 
 html {
   font-size: 10px;
@@ -1109,8 +1107,8 @@ img {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
-    -webkit-transition--o-transition: all 0.2s ease-in-out;
-      -webkit-transition--o-transition-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
   height: auto; }
@@ -2285,8 +2283,7 @@ label {
 
 input[type="search"] {
   -webkit-box-sizing: border-box;
-    -webkit-box-sizing--moz-box-sizing: border-box;
-      -webkit-box-sizing--moz-box-sizing-box-sizing: border-box; }
+  box-sizing: border-box; }
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -2332,15 +2329,18 @@ output {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    -webkit-transition--o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-      -webkit-transition--o-transition-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s; }
   .form-control:focus {
     border-color: #66afe9;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-      -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    outline--webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    outline-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
   .form-control::-moz-placeholder {
     color: #999;
     opacity: 1; }
@@ -2594,12 +2594,12 @@ select[multiple].input-lg {
 
 .has-success .form-control {
   border-color: #3c763d;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+  border-color--webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-color-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
   .has-success .form-control:focus {
     border-color: #2b542c;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
-      -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; }
 
 .has-success .input-group-addon {
   color: #3c763d;
@@ -2623,12 +2623,12 @@ select[multiple].input-lg {
 
 .has-warning .form-control {
   border-color: #8a6d3b;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+  border-color--webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-color-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
   .has-warning .form-control:focus {
     border-color: #66512c;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
-      -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; }
 
 .has-warning .input-group-addon {
   color: #8a6d3b;
@@ -2652,12 +2652,12 @@ select[multiple].input-lg {
 
 .has-error .form-control {
   border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+  border-color--webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-color-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
   .has-error .form-control:focus {
     border-color: #843534;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-      -webkit-box-shadow-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; }
 
 .has-error .input-group-addon {
   color: #a94442;
@@ -2776,9 +2776,9 @@ select[multiple].input-lg {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   -webkit-user-select: none;
-    -webkit-user-select--moz-user-select: none;
-      -webkit-user-select--moz-user-select--ms-user-select: none;
-        -webkit-user-select--moz-user-select--ms-user-select-user-select: none; }
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
@@ -2789,14 +2789,14 @@ select[multiple].input-lg {
     outline: 0;
     background-image: none;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-      -webkit-box-shadow-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
   .btn.disabled, .btn[disabled],
   fieldset[disabled] .btn {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
-      -webkit-box-shadow-box-shadow: none; }
+    box-shadow: none; }
 
 a.btn.disabled,
 fieldset[disabled] a.btn {
@@ -3033,7 +3033,7 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-link {
     background-color: transparent;
     -webkit-box-shadow: none;
-      -webkit-box-shadow-box-shadow: none; }
+    box-shadow: none; }
   .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
   .btn-link:hover, .btn-link:focus {

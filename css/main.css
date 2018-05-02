@@ -9,5 +9,10 @@
      text-overflow: ellipsis;
   overflow: hidden; }
 
+span {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap; }
+
 body {
   min-width: 320px; }
