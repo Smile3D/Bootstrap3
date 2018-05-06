@@ -1,4 +1,4 @@
-var syntax        = 'sass'; // Syntax: sass or scss;
+var syntax          = 'sass'; // Syntax: sass or scss;
 
 var gulp        	= require('gulp'),
     sass        	= require('gulp-sass'),
@@ -7,16 +7,33 @@ var gulp        	= require('gulp'),
     imagemin    	= require('gulp-imagemin'),
     pngquant        = require('imagemin-pngquant'),
     cache       	= require('gulp-cache'),
-    autoprefixer 	= require('gulp-autoprefixer');
-    gcmq            = require('gulp-group-css-media-queries');
+    autoprefixer 	= require('gulp-autoprefixer'),
+    gcmq            = require('gulp-group-css-media-queries'),
+    plumber         = require('gulp-plumber'),
+    gutil           = require('gulp-util'),
+    sourcemaps      = require('gulp-sourcemaps');
 
 gulp.task('styles', function() {
 	return gulp.src(''+syntax+'/**/*.'+syntax+'')
+	.pipe(plumber(function(error) {
+	  gutil.log(gutil.colors.bold.red(error.message));
+	  gutil.beep();
+	  this.emit('end');
+	 }))
+	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 version', '>1%', 'ie 8', 'ie 7'], {cascade: true}))
+	.pipe(sourcemaps.write('./'))
+	.pipe(plumber.stop())
 	.pipe(gulp.dest('css'))
 	.pipe(browserSync.reload({stream: true}))
 });
+
+ // .pipe(plumber(function(error) {
+ //  gutil.log(gutil.colors.bold.red(error.message));
+ //  gutil.beep();
+ //  this.emit('end');
+ // }))
 
 gulp.task('browser-sync', function() {
 	browserSync({
