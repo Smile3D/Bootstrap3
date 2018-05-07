@@ -29,12 +29,6 @@ gulp.task('styles', function() {
 	.pipe(browserSync.reload({stream: true}))
 });
 
- // .pipe(plumber(function(error) {
- //  gutil.log(gutil.colors.bold.red(error.message));
- //  gutil.beep();
- //  this.emit('end');
- // }))
-
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
@@ -46,7 +40,7 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('build', ['clean','img', 'sass', 'gcmq'], function() {
+gulp.task('build', ['clean','img', 'styles', 'gcmq'], function() {
 	var buildCSS = gulp.src([
 		'css/main.css'
 	])
